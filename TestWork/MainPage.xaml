@@ -8,12 +8,18 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Border Background="Gray" Margin="0,0,0,931">
+    <Grid Background="White" BorderBrush="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="443*"/>
+        </Grid.RowDefinitions>
+        <Border Background="Gray" Margin="0,0,0,45">
             <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" Text="Обменник валют" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.853,-0.658" Height="53" Width="1500" FontFamily="Arial Black" FontSize="40" TextAlignment="Center"/>
         </Border>
-        <Button Content="Button" Margin="353,841,0,0" VerticalAlignment="Top" Height="59" Width="131" Background="Transparent" Foreground="#FF0C00FF"/>
-        <Button Content="Button" Margin="1090,841,0,0" VerticalAlignment="Top" Height="59" Width="131" Background="Transparent" Foreground="#FF0C00FF" RenderTransformOrigin="6.248,0.492"/>
-        <TextBox HorizontalAlignment="Left" Margin="353,420,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="131"/>
+        <Button Content="Button" Margin="353,721,0,0" VerticalAlignment="Top" Height="59" Width="131" Background="Transparent" Foreground="#FF0C00FF" Grid.Row="1" Click="Button_Click"/>
+        <Button Content="Button" Margin="1388,727,0,0" VerticalAlignment="Top" Height="59" Width="131" Background="Transparent" Foreground="#FF0C00FF" RenderTransformOrigin="6.248,0.492" Grid.Row="1"/>
+        <TextBox HorizontalAlignment="Left" Margin="353,306,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="131" Grid.Row="1" FocusVisualSecondaryBrush="Transparent" Background="Transparent" Foreground="#FF0C00FF"/>
+        <TextBox HorizontalAlignment="Left" Margin="1388,306,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="131" Grid.Row="1" FocusVisualSecondaryBrush="Transparent" Background="Transparent" Foreground="#FF0C00FF"/>
     </Grid>
 </Page>
+ 

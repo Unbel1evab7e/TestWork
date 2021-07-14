@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="TestWork.Currencies"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TestWork"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="layout" BorderBrush="#00000000" Background="#00000000" Margin="-10,10,10,-10">
+        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Выбор валюты" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="1904" SelectionHighlightColor="White" TextAlignment="Center" FocusVisualPrimaryBrush="White" FocusVisualSecondaryBrush="White"/>
+        <ListView x:Name="CurrenciesList" Background="Gray" BorderBrush="Black" Foreground="White" FocusVisualPrimaryBrush="Black" Margin="10,50,-10,0">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:Currency">
+                    <RelativePanel BorderBrush="Black" Background="#00000000" FocusVisualSecondaryBrush="#00000000"  RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Tapped="RelativePanel_Tapped" >
+                        <TextBlock x:Name="Duty" Text="" TextWrapping="Wrap" FocusVisualPrimaryBrush="Blue" Margin="1600,-7,124,7" Visibility="Visible" IsHitTestVisible="False"/>
+                        <TextBlock x:Name="Name" FontSize="16" Foreground="Black" Text="{x:Bind Name}"  RelativePanel.LeftOf="CharCode" RelativePanel.AlignLeftWithPanel="True" HorizontalAlignment="Left" SelectionHighlightColor="Black" FocusVisualPrimaryBrush="Gray" />
+                        <TextBlock x:Name="CharCode" FontSize="16" Foreground="Black" Text="{x:Bind CharCode}" RelativePanel.RightOf="Duty"  RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True" SelectionHighlightColor="Black" FocusVisualPrimaryBrush="Gray" />
+                    </RelativePanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+
+
+        </ListView>
+
+    </Grid>
+
+</Page>

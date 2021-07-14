@@ -22,9 +22,20 @@ namespace TestWork
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private Currency currency;
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            currency = e.Parameter as Currency;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            Frame.Navigate(typeof(Currencies));
         }
     }
 }
