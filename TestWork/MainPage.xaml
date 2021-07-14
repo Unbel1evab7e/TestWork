@@ -16,10 +16,12 @@
         <Border Background="Gray" Margin="0,0,0,45">
             <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" Text="Обменник валют" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.853,-0.658" Height="53" Width="1500" FontFamily="Arial Black" FontSize="40" TextAlignment="Center"/>
         </Border>
-        <Button Content="Button" Margin="353,721,0,0" VerticalAlignment="Top" Height="59" Width="131" Background="Transparent" Foreground="#FF0C00FF" Grid.Row="1" Click="Button_Click"/>
-        <Button Content="Button" Margin="1388,727,0,0" VerticalAlignment="Top" Height="59" Width="131" Background="Transparent" Foreground="#FF0C00FF" RenderTransformOrigin="6.248,0.492" Grid.Row="1"/>
-        <TextBox HorizontalAlignment="Left" Margin="353,306,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="131" Grid.Row="1" FocusVisualSecondaryBrush="Transparent" Background="Transparent" Foreground="#FF0C00FF"/>
-        <TextBox HorizontalAlignment="Left" Margin="1388,306,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="131" Grid.Row="1" FocusVisualSecondaryBrush="Transparent" Background="Transparent" Foreground="#FF0C00FF"/>
+        <Button x:Name="BaseCurrencyButton" Content="Выбрать валюту" Margin="353,721,0,0" VerticalAlignment="Top" Height="59" Width="131" Background="Transparent" Foreground="#FF0C00FF" Grid.Row="1" Click="BaseCurrencyButton_Click"/>
+        <Button x:Name="SecondCurrencyButton" Content="Выбрать валюту" Margin="1388,727,0,0" VerticalAlignment="Top" Height="59" Width="131" Background="Transparent" Foreground="#FF0C00FF" RenderTransformOrigin="6.248,0.492" Grid.Row="1" Click="SecondCurrencyButton_Click"/>
+        <TextBox x:Name="BaseCurrencyAmountTextBox" HorizontalAlignment="Left" Margin="353,306,0,0" Text="Колличество" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="131" Grid.Row="1" FocusVisualSecondaryBrush="Transparent" Background="Transparent" Foreground="Black" TextAlignment="Center"/>
+        <TextBox x:Name="SecondCurrencyAmountTextBox" HorizontalAlignment="Left" Margin="1388,306,0,0" Text="Колличество" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="131" Grid.Row="1" FocusVisualSecondaryBrush="Transparent" Background="Transparent" Foreground="Black" TextAlignment="Center"/>
+        <TextBlock x:Name="BaseCurrencyNameTextBlock" HorizontalAlignment="Left" Margin="353,123,0,0" Grid.Row="1" Text="Валюта" TextWrapping="Wrap" VerticalAlignment="Top" Height="75" Width="113" RenderTransformOrigin="0.06,0.365" Foreground="Black" TextAlignment="Center"/>
+        <TextBlock x:Name="SecondCurrencyNameTextBlock" HorizontalAlignment="Left" Margin="1407,123,0,0" Grid.Row="1" Text="Валюта" TextWrapping="Wrap" VerticalAlignment="Top" Height="75" Width="113" RenderTransformOrigin="0.06,0.365" Foreground="Black" TextAlignment="Center"/>
     </Grid>
 </Page>
  
