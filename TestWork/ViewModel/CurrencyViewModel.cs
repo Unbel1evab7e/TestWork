@@ -10,5 +10,6 @@ namespace TestWork.ViewModel
     {
         public Currency BaseCurrency { get; set; }
         public Currency SecondCurrency { get; set; }
+        public CurrencySide Side { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿<Page
+﻿<Page x:Name="Main"
     x:Class="TestWork.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,20 +8,83 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="White" BorderBrush="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="57*"/>
-            <RowDefinition Height="443*"/>
-        </Grid.RowDefinitions>
-        <Border Background="Gray" Margin="0,0,0,45">
-            <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" Text="Обменник валют" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.853,-0.658" Height="53" Width="1500" FontFamily="Arial Black" FontSize="40" TextAlignment="Center"/>
-        </Border>
-        <Button x:Name="BaseCurrencyButton" Content="Выбрать валюту" Margin="353,721,0,0" VerticalAlignment="Top" Height="59" Width="131" Background="Transparent" Foreground="#FF0C00FF" Grid.Row="1" Click="BaseCurrencyButton_Click"/>
-        <Button x:Name="SecondCurrencyButton" Content="Выбрать валюту" Margin="1388,727,0,0" VerticalAlignment="Top" Height="59" Width="131" Background="Transparent" Foreground="#FF0C00FF" RenderTransformOrigin="6.248,0.492" Grid.Row="1" Click="SecondCurrencyButton_Click"/>
-        <TextBox x:Name="BaseCurrencyAmountTextBox" HorizontalAlignment="Left" Margin="353,306,0,0" Text="Колличество" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="131" Grid.Row="1" FocusVisualSecondaryBrush="Transparent" Background="Transparent" Foreground="Black" TextAlignment="Center"/>
-        <TextBox x:Name="SecondCurrencyAmountTextBox" HorizontalAlignment="Left" Margin="1388,306,0,0" Text="Колличество" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="131" Grid.Row="1" FocusVisualSecondaryBrush="Transparent" Background="Transparent" Foreground="Black" TextAlignment="Center"/>
+    <Grid Background="White" BorderBrush="White" FocusVisualSecondaryBrush="Black" FocusVisualPrimaryBrush="Black">
         <TextBlock x:Name="BaseCurrencyNameTextBlock" HorizontalAlignment="Left" Margin="353,123,0,0" Grid.Row="1" Text="Валюта" TextWrapping="Wrap" VerticalAlignment="Top" Height="75" Width="113" RenderTransformOrigin="0.06,0.365" Foreground="Black" TextAlignment="Center"/>
+        
         <TextBlock x:Name="SecondCurrencyNameTextBlock" HorizontalAlignment="Left" Margin="1407,123,0,0" Grid.Row="1" Text="Валюта" TextWrapping="Wrap" VerticalAlignment="Top" Height="75" Width="113" RenderTransformOrigin="0.06,0.365" Foreground="Black" TextAlignment="Center"/>
+        
+        <TextBox x:Name="SecondCurrencyAmountTextBox" HorizontalAlignment="Left" Margin="1388,306,0,0" Text="Колличество" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="131" Grid.Row="1" FocusVisualSecondaryBrush="Transparent" Background="Transparent" Foreground="Black" TextAlignment="Center" SelectionHighlightColor="Transparent" TextChanged="SecondCurrencyAmountTextBox_TextChanged" PointerEntered="SecondCurrencyAmountTextBox_PointerEntered" PointerExited="SecondCurrencyAmountTextBox_PointerExited">
+            <TextBox.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.ThemeDictionaries>
+                        <ResourceDictionary x:Key="Dark">
+                            <SolidColorBrush x:Key="TextBoxForegroundPointerOver" Color="Black"/>
+                            <SolidColorBrush x:Key="TextBoxBackgroundPointerOver" Color="Transparent"/>
+                        </ResourceDictionary>
+                        <ResourceDictionary x:Key="Light">
+                            <SolidColorBrush x:Key="TextBoxForegroundPointerOver" Color="Black"/>
+                            <SolidColorBrush x:Key="TextBoxBackgroundPointerOver" Color="Transparent"/>
+                        </ResourceDictionary>
+                    </ResourceDictionary.ThemeDictionaries>
+                </ResourceDictionary>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBox x:Name="BaseCurrencyAmountTextBox" HorizontalAlignment="Left" Margin="353,306,0,0" Text="Колличество" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="131" Grid.Row="1" FocusVisualSecondaryBrush="Transparent" Background="Transparent" Foreground="Black" TextAlignment="Center" TextChanged="BaseCurrencyAmountTextBox_TextChanged" SelectionHighlightColor="Transparent" PointerEntered="BaseCurrencyAmountTextBox_PointerEntered" PointerExited="BaseCurrencyAmountTextBox_PointerExited">
+            <TextBox.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.ThemeDictionaries>
+                        <ResourceDictionary x:Key="Dark">
+                            <SolidColorBrush x:Key="TextBoxForegroundPointerOver" Color="Black"/>
+                            <SolidColorBrush x:Key="TextBoxBackgroundPointerOver" Color="Transparent"/>
+                        </ResourceDictionary>
+                        <ResourceDictionary x:Key="Light">
+                            <SolidColorBrush x:Key="TextBoxForegroundPointerOver" Color="Black"/>
+                            <SolidColorBrush x:Key="TextBoxBackgroundPointerOver" Color="Transparent"/>
+                        </ResourceDictionary>
+                    </ResourceDictionary.ThemeDictionaries>
+                </ResourceDictionary>
+            </TextBox.Resources>
+        </TextBox>
+       
+        <Button x:Name="BaseCurrencyButton" Content="Выбрать валюту" Margin="353,721,0,0" VerticalAlignment="Top" Height="59" Width="131" Foreground="#FF0C00FF" Grid.Row="1" Click="BaseCurrencyButton_Click" Background="#33FFFFFF" FocusVisualPrimaryBrush="Transparent" FocusVisualSecondaryBrush="Transparent">
+            <Button.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.ThemeDictionaries>
+                        <ResourceDictionary x:Key="Dark">
+                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="Blue"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="Transparent"/>
+                            <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="Blue"/>
+                        </ResourceDictionary>
+                        <ResourceDictionary x:Key="Light">
+                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="Blue"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="Transparent"/>
+                            <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="Blue"/>
+                        </ResourceDictionary>
+                    </ResourceDictionary.ThemeDictionaries>
+                </ResourceDictionary>
+            </Button.Resources>
+        </Button>
+       
+        <Button x:Name="SecondCurrencyButton" Content="Выбрать валюту" Margin="1388,727,0,0" VerticalAlignment="Top" Height="59" Width="131" Background="Transparent" Foreground="#FF0C00FF" RenderTransformOrigin="6.248,0.492" Grid.Row="1" Click="SecondCurrencyButton_Click" FocusVisualPrimaryBrush="#00000000" FocusVisualSecondaryBrush="Transparent" BorderBrush="#00000000">
+            <Button.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.ThemeDictionaries>
+                        <ResourceDictionary x:Key="Dark">
+                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="Blue"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="Transparent"/>
+                            <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="Blue"/>
+                        </ResourceDictionary>
+                        <ResourceDictionary x:Key="Light">
+                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="Blue"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="Transparent"/>
+                            <SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="Blue"/>
+                        </ResourceDictionary>
+                    </ResourceDictionary.ThemeDictionaries>
+                </ResourceDictionary>
+            </Button.Resources>
+        </Button>
+   
     </Grid>
 </Page>
  

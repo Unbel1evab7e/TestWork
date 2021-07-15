@@ -27,8 +27,7 @@ namespace TestWork
     /// </summary>
     public sealed partial class Currencies : Page
     {
-        private List<object> _parametrs;
-        private string _currencyType;
+
         private CurrencyViewModel _currency;
         public  Currencies()
         {
@@ -44,26 +43,24 @@ namespace TestWork
                 var tempCurrency = new Currency() {CharCode=CharCode ,Name =Name};
                 CurrenciesList.Items.Add(tempCurrency);
             }
-            
+            CurrenciesList.Items.Add(new Currency() { CharCode = "RUB", Name = "Российский рубль" });
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            _parametrs = e.Parameter as List<object>;
-            _currency = (CurrencyViewModel)_parametrs.ElementAt(0);
-             _currencyType = _parametrs.ElementAt(1).ToString();
+            _currency = e.Parameter as CurrencyViewModel;
         }
         private void RelativePanel_Tapped(object sender, TappedRoutedEventArgs e)
         {
             
-            if (_currencyType == "Base")
+            if (_currency.Side == CurrencySide.BaseCurrency)
             {
                 _currency.BaseCurrency.CharCode = ((Currency)CurrenciesList.SelectedItem).CharCode;
             }
-            if (_currencyType == "Second")
+            if (_currency.Side == CurrencySide.SecondCurrency)
             {
                 _currency.SecondCurrency.CharCode = ((Currency)CurrenciesList.SelectedItem).CharCode;
             }
-            Frame.Navigate(typeof(MainPage),_currency);
+            Frame.Navigate(typeof(LoadingPage),_currency);
         }
     }
 }
